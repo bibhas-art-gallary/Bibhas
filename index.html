@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BVS Art Gallery by Bibhas Maity - Discover vibrant, original paintings crafted with passion.">
+    <meta name="keywords" content="art gallery, original paintings, Bibhas Maity, buy art, BVS Art Gallery">
+    <meta name="author" content="Bibhas Maity">
+    <meta property="og:title" content="BVS Art Gallery - Original Paintings by Bibhas Maity">
+    <meta property="og:description" content="Explore the vibrant world of art with Bibhas Maity's unique paintings at BVS Art Gallery.">
+    <meta property="og:image" content="https://i.supaimg.com/67cdb79e-41f7-495d-ae94-834afa10ee4b.jpg">
+    <meta property="og:url" content="https://www.bvsartgallery.com">
+    <title>BVS Art Gallery - Bibhas Maity's Original Paintings</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 400;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links li a:hover, .nav-links li a:focus {
+            color: #e74c3c;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+            outline: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section with Parallax */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') no-repeat center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+
+        .cta-button:hover, .cta-button:focus {
+            background: #c0392b;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+            outline: none;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(135deg, #4b0082, #8a2be2);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1s ease-in;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            z-index: 0;
+        }
+
+        .about h2, .about p, .about a {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .artist-profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 1rem auto;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Featured Artwork Section */
+        .featured {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .featured.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .featured h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel:hover .carousel-items {
+            animation-play-state: paused;
+        }
+
+        .carousel-items {
+            display: flex;
+            transition: transform 0.5s ease;
+            animation: autoSlide 15s infinite;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-item p {
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        /* Exhibition Section */
+        .exhibition {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: #f9f9f9;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .exhibition.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .exhibition h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #e74c3c;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .gallery.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-filters {
+            margin-bottom: 2rem;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .filter-button.active, .filter-button:hover, .filter-button:focus {
+            background: #e74c3c;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            outline: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .gallery-item h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 0.5rem 0;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-button:hover, .whatsapp-button:focus {
+            background: #20b358;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+            outline: none;
+        }
+
+        .social-share {
+            margin-top: 0.5rem;
+        }
+
+        .social-share a {
+            color: #2c3e50;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-share a:hover, .social-share a:focus {
+            color: #e74c3c;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: #f9f9f9;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .testimonials.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        .testimonial-item h4 {
+            margin-top: 1rem;
+            color: #e74c3c;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 5%;
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stats.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Lightbox with Details */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .lightbox-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .lightbox-content h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .lightbox-content p {
+            margin-bottom: 1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover, .lightbox-close:focus {
+            color: #e74c3c;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .contact.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .contact input, .contact textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact button {
+            padding: 0.8rem;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+
+        .contact button:hover, .contact button:focus {
+            background: #c0392b;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 3rem 5%;
+            background: #f9f9f9;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .newsletter.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .newsletter input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 0.8rem 2rem;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+
+        .newsletter button:hover, .newsletter button:focus {
+            background: #c0392b;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: #fff;
+            padding: 0.8rem;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+
+        .back-to-top:hover, .back-to-top:focus {
+            background: #c0392b;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .social-links a:hover, .social-links a:focus {
+            color: #e74c3c;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes autoSlide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+                transform: translateY(-100%);
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .gallery-item img {
+                height: 150px;
+            }
+
+            .contact form, .newsletter form {
+                max-width: 100%;
+                flex-direction: column;
+            }
+
+            .carousel-item img {
+                height: 200px;
+            }
+
+            .artist-profile {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item img {
+                height: 120px;
+            }
+
+            .carousel-item img {
+                height: 150px;
+            }
+
+            .exhibition .countdown {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>BVS Art Gallery</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                <li><a href="#about" aria-label="Go to About">About</a></li>
+                <li><a href="#featured" aria-label="Go to Featured Artwork">Featured</a></li>
+                <li><a href="#gallery" aria-label="Go to Gallery">Gallery</a></li>
+                <li><a href="#exhibition" aria-label="Go to Exhibitions">Exhibitions</a></li>
+                <li><a href="#testimonials" aria-label="Go to Testimonials">Testimonials</a></li>
+                <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Unleash Your Passion for Art at BVS Art Gallery!</h1>
+            <p>Dive into the vibrant world of original paintings by Bibhas Maity, crafted with boundless creativity!</p>
+            <a href="#gallery" class="cta-button" aria-label="View the art gallery">Explore Now!</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Meet Bibhas Maity - The Soul of BVS Art Gallery</h2>
+        <img src="https://i.supaimg.com/0b0c7ce4-2b7f-463e-8459-db8e6790ab0e.jpg" alt="Bibhas Maity, Artist" class="artist-profile" loading="lazy">
+        <p>I'm <strong>Bibhas Maity</strong>, an artist bursting with passion and excitement to bring colors to life! At BVS Art Gallery, every painting is a piece of my heart, crafted with vibrant energy and boundless creativity. My mission? To ignite your love for art with unique, soul-stirring masterpieces that transform spaces and inspire emotions.</p>
+        <p>Join me on this exhilarating journey to celebrate beauty, imagination, and the magic of art! Whether you're a collector or an art enthusiast, my creations are here to captivate and thrill you!</p>
+        <a href="#gallery" class="cta-button" aria-label="Explore Bibhas Maity's artworks">Discover My Art</a>
+    </section>
+
+    <!-- Featured Artwork Section -->
+    <section id="featured" class="featured">
+        <h2>Featured Masterpieces</h2>
+        <div class="carousel">
+            <div class="carousel-items">
+                <div class="carousel-item">
+                    <img src="https://i.supaimg.com/67cdb79e-41f7-495d-ae94-834afa10ee4b.jpg" alt="Drainage Area painting" loading="lazy">
+                    <h3>Drainage Area</h3>
+                    <p>₹889 - A vibrant abstract piece capturing the flow of nature.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.supaimg.com/81898361-9be4-45c3-9a06-ac0d0a3b74ed.jpg" alt="Beautiful Tree painting" loading="lazy">
+                    <h3>Beautiful Tree</h3>
+                    <p>₹1200 - A serene landscape showcasing the majesty of nature.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.supaimg.com/d8103ab4-396d-4fb6-8a10-f50ea3ea10ea.jpg" alt="Bakkhali painting" loading="lazy">
+                    <h3>Bakkhali</h3>
+                    <p>₹250 - A coastal landscape filled with tranquil beauty.</p>
+                </div>
+            </div>
+            <button class="carousel-prev" aria-label="Previous artwork">&#10094;</button>
+            <button class="carousel-next" aria-label="Next artwork">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Exhibition Section -->
+    <section id="exhibition" class="exhibition">
+        <h2>Upcoming Exhibitions</h2>
+        <p>Join us for our next art exhibition showcasing Bibhas Maity's latest creations!</p>
+        <div class="countdown" id="countdown"></div>
+        <p><strong>Date:</strong> September 15, 2025 | <strong>Location:</strong> Kolkata Art Gallery</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Our Vibrant Collection</h2>
+        <div class="gallery-filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="abstract">Abstract</button>
+            <button class="filter-button" data-filter="landscape">Landscape</button>
+            <button class="filter-button" data-filter="portrait">Portrait</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="abstract">
+                <img src="https://i.supaimg.com/67cdb79e-41f7-495d-ae94-834afa10ee4b.jpg" alt="Drainage Area painting" class="gallery-img" loading="lazy">
+                <h3>Drainage Area</h3>
+                <p>₹889</p>
+                <p class="description">A vibrant abstract piece capturing the flow of nature.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Drainage%20Area%20https://i.supaimg.com/67cdb79e-41f7-495d-ae94-834afa10ee4b.jpg" class="whatsapp-button" aria-label="Order Drainage Area via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/drainage-area" aria-label="Share Drainage Area on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/drainage-area&text=Check out Drainage Area by Bibhas Maity!" aria-label="Share Drainage Area on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://i.supaimg.com/81898361-9be4-45c3-9a06-ac0d0a3b74ed.jpg" alt="Beautiful Tree painting" class="gallery-img" loading="lazy">
+                <h3>Beautiful Tree</h3>
+                <p>₹1200</p>
+                <p class="description">A serene landscape showcasing the majesty of nature.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Beautiful%20Tree%20https://i.supaimg.com/81898361-9be4-45c3-9a06-ac0d0a3b74ed.jpg" class="whatsapp-button" aria-label="Order Beautiful Tree via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/beautiful-tree" aria-label="Share Beautiful Tree on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/beautiful-tree&text=Check out Beautiful Tree by Bibhas Maity!" aria-label="Share Beautiful Tree on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://i.supaimg.com/d8103ab4-396d-4fb6-8a10-f50ea3ea10ea.jpg" alt="Bakkhali painting" class="gallery-img" loading="lazy">
+                <h3>Bakkhali</h3>
+                <p>₹250</p>
+                <p class="description">A coastal landscape filled with tranquil beauty.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Bakkhali%20https://i.supaimg.com/d8103ab4-396d-4fb6-8a10-f50ea3ea10ea.jpg" class="whatsapp-button" aria-label="Order Bakkhali via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/bakkhali" aria-label="Share Bakkhali on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/bakkhali&text=Check out Bakkhali by Bibhas Maity!" aria-label="Share Bakkhali on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="abstract">
+                <img src="https://via.placeholder.com/300x200?text=Abstract+Dreams" alt="Abstract Dreams painting" class="gallery-img" loading="lazy">
+                <h3>Abstract Dreams</h3>
+                <p>₹1500</p>
+                <p class="description">A bold exploration of colors and emotions.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Abstract%20Dreams%20https://via.placeholder.com/300x200?text=Abstract+Dreams" class="whatsapp-button" aria-label="Order Abstract Dreams via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/abstract-dreams" aria-label="Share Abstract Dreams on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/abstract-dreams&text=Check out Abstract Dreams by Bibhas Maity!" aria-label="Share Abstract Dreams on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="portrait">
+                <img src="https://via.placeholder.com/300x200?text=Silent+Gaze" alt="Silent Gaze painting" class="gallery-img" loading="lazy">
+                <h3>Silent Gaze</h3>
+                <p>₹2000</p>
+                <p class="description">A captivating portrait evoking deep emotions.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Silent%20Gaze%20https://via.placeholder.com/300x200?text=Silent+Gaze" class="whatsapp-button" aria-label="Order Silent Gaze via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/silent-gaze" aria-label="Share Silent Gaze on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/silent-gaze&text=Check out Silent Gaze by Bibhas Maity!" aria-label="Share Silent Gaze on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://via.placeholder.com/300x200?text=Mountain+Whisper" alt="Mountain Whisper painting" class="gallery-img" loading="lazy">
+                <h3>Mountain Whisper</h3>
+                <p>₹950</p>
+                <p class="description">A breathtaking view of misty mountains.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Mountain%20Whisper%20https://via.placeholder.com/300x200?text=Mountain+Whisper" class="whatsapp-button" aria-label="Order Mountain Whisper via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/mountain-whisper" aria-label="Share Mountain Whisper on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/mountain-whisper&text=Check out Mountain Whisper by Bibhas Maity!" aria-label="Share Mountain Whisper on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="abstract">
+                <img src="https://via.placeholder.com/300x200?text=Cosmic+Wave" alt="Cosmic Wave painting" class="gallery-img" loading="lazy">
+                <h3>Cosmic Wave</h3>
+                <p>₹1800</p>
+                <p class="description">An abstract journey through cosmic energies.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Cosmic%20Wave%20https://via.placeholder.com/300x200?text=Cosmic+Wave" class="whatsapp-button" aria-label="Order Cosmic Wave via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/cosmic-wave" aria-label="Share Cosmic Wave on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/cosmic-wave&text=Check out Cosmic Wave by Bibhas Maity!" aria-label="Share Cosmic Wave on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="portrait">
+                <img src="https://via.placeholder.com/300x200?text=Eternal+Smile" alt="Eternal Smile painting" class="gallery-img" loading="lazy">
+                <h3>Eternal Smile</h3>
+                <p>₹2200</p>
+                <p class="description">A portrait radiating warmth and serenity.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Eternal%20Smile%20https://via.placeholder.com/300x200?text=Eternal+Smile" class="whatsapp-button" aria-label="Order Eternal Smile via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/eternal-smile" aria-label="Share Eternal Smile on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/eternal-smile&text=Check out Eternal Smile by Bibhas Maity!" aria-label="Share Eternal Smile on Twitter">TW</a>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://via.placeholder.com/300x200?text=Sunset+Valley" alt="Sunset Valley painting" class="gallery-img" loading="lazy">
+                <h3>Sunset Valley</h3>
+                <p>₹1100</p>
+                <p class="description">A stunning landscape of a valley at dusk.</p>
+                <a href="https://wa.me/7029704357?text=I%20want%20to%20buy%20this%20painting:%20Sunset%20Valley%20https://via.placeholder.com/300x200?text=Sunset+Valley" class="whatsapp-button" aria-label="Order Sunset Valley via WhatsApp">Order via WhatsApp</a>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bvsartgallery.com/purchase/sunset-valley" aria-label="Share Sunset Valley on Facebook">FB</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://www.bvsartgallery.com/purchase/sunset-valley&text=Check out Sunset Valley by Bibhas Maity!" aria-label="Share Sunset Valley on Twitter">TW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Art Lovers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <p>"Bibhas Maity's paintings are a burst of emotion! My living room feels alive with his vibrant artwork."</p>
+                <h4>- Priya S., Kolkata</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The passion in every stroke is undeniable. BVS Art Gallery is my go-to for unique pieces!"</p>
+                <h4>- Arjun M., Mumbai</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"I’m thrilled with my purchase! Bibhas’s art brings joy to my home every day."</p>
+                <h4>- Sneha R., Delhi</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 class="stat-counter" data-target="150">0</h3>
+                <p>Artworks Created</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-counter" data-target="2000">0</h3>
+                <p>Happy Collectors</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-counter" data-target="12">0</h3>
+                <p>Years of Artistry</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-counter" data-target="5">0</h3>
+                <p>Exhibitions Held</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox with Details -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Artwork details lightbox">
+        <span class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged gallery image" id="lightbox-img">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-price"></p>
+            <p id="lightbox-description"></p>
+            <a href="#" class="whatsapp-button" id="lightbox-whatsapp" aria-label="Order artwork via WhatsApp">Order via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Let’s Create Magic Together!</h2>
+        <p>Have questions or want to own a Bibhas Maity masterpiece? Reach out now!</p>
+        <form action="https://formspree.io/f/REPLACE_WITH_VALID_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
+            <textarea name="message" placeholder="Your Message" required aria-label="Your message"></textarea>
+            <button type="submit" aria-label="Send message">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <h2>Join Our Art Community</h2>
+        <p>Subscribe to get updates on new artworks, exhibitions, and exclusive offers!</p>
+        <form action="https://formspree.io/f/REPLACE_WITH_VALID_ID" method="POST">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your email for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top" aria-label="Back to top">↑</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 BVS Art Gallery by Bibhas Maity. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com/bvsartgallery" aria-label="Visit our Facebook page">Facebook</a>
+            <a href="https://instagram.com/bvsartgallery" aria-label="Visit our Instagram page">Instagram</a>
+            <a href="https://x.com/bvsartgallery" aria-label="Visit our Twitter page">Twitter</a>
+            <a href="https://wa.me/7029704357" aria-label="Contact via WhatsApp">WhatsApp</a>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                if (navLinks.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.featured, .exhibition, .gallery, .testimonials, .stats, .contact, .newsletter');
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('reveal');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality with details
+        const galleryImgs = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxPrice = document.getElementById('lightbox-price');
+        const lightboxDescription = document.getElementById('lightbox-description');
+        const lightboxWhatsapp = document.getElementById('lightbox-whatsapp');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        galleryImgs.forEach(img => {
+            img.addEventListener('click', () => {
+                const parent = img.closest('.gallery-item');
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxTitle.textContent = parent.querySelector('h3').textContent;
+                lightboxPrice.textContent = parent.querySelector('p:not(.description)').textContent;
+                lightboxDescription.textContent = parent.querySelector('.description').textContent;
+                lightboxWhatsapp.href = parent.querySelector('.whatsapp-button').href;
+                lightboxWhatsapp.setAttribute('aria-label', `Order ${parent.querySelector('h3').textContent} via WhatsApp`);
+                lightboxClose.focus();
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Carousel functionality
+        const carouselItems = document.querySelector('.carousel-items');
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        carouselNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselItems.children.length;
+            carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        carouselPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselItems.children.length) % carouselItems.children.length;
+            carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        // Exhibition countdown
+        const countdownDate = new Date('2025-09-15T10:00:00').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                countdownElement.textContent = 'Exhibition has started!';
+            }
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Stats counter animation
+        const counters = document.querySelectorAll('.stat-counter');
+        const speed = 200;
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
